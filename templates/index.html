@@ -1,9 +1,18 @@
 <head>
     <title>{{ title }}</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
-
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+    crossorigin=""></script>
+<style>
+    #map {height: 500px;}
+</style>
 <body>
-    <div class="App">
+    ciao
+    <!-- <div class="App">
         <header class="App-header">
             <img src="{{ url_for('static', filename='Octocat.png') }}" class="App-logo" alt="logo" />
             <p>
@@ -13,7 +22,16 @@
                 Edit <code>templates/index.html</code> and refresh to see your changes!
             </p>
         </header>
-    </div>
+    </div> -->
+    <div id="map"></div>
+    <div id="selectedPlace"></div>
+    <form action="notes" method="post">
+        <input type="text" id="content" name="content">
+        <input type="hidden" id="lat" name="lat">
+        <input type="hidden" id="lng" name="lng">
+        <input type="submit" id="btnSubmit" value="Submit">
+    </form>
+    <script src = "{{url_for('static', filename='app.js')}}"></script>
 </body>
 
 </html>
